@@ -57,9 +57,14 @@ def get_password():
     while True:
         password= input("enter the password: ")
         if len(password) > 7:
-            return password
+            if re.search(r"[A-Z]",password):
+                return password
+            else:
+                print("error: passwor must contain atleast one upper case")
         else:
-            print("the password should be atlest 8 characters")
+            print("error:password should caontain min 8 characters")
+            
+        
 
 
 first_name = get_first_name()
