@@ -58,7 +58,12 @@ def get_password():
         password= input("enter the password: ")
         if len(password) > 7:
             if re.search(r"[A-Z]",password):
-                return password
+                if re.search(r"[0-9]",password):
+                    return password
+                else:
+                    print("error: password must contain atleast one numeric value")
+            
+                
             else:
                 print("error: passwor must contain atleast one upper case")
         else:
