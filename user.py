@@ -53,8 +53,9 @@ def get_mobile_number():
             print("error: the mobile number should be in 10 digits")
             
 def get_password():
-    password= input("enter the password: ")
+    
     while True:
+        password= input("enter the password: ")
         if len(password) > 7:
             return password
         else:
@@ -66,7 +67,7 @@ last_name = get_last_name()
 e_mail=get_email()
 country_code=get_country_code()
 mobile_number=get_mobile_number()
-password=get_password
+password=get_password()
 
 
 
