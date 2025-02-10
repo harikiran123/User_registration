@@ -52,8 +52,10 @@ def get_mobile_number():
         else:
             print("error: the mobile number should be in 10 digits")
             
+
 def get_password():
     
+
     while True:
         password= input("enter the password: ")
         if len(password) > 7:
@@ -69,7 +71,6 @@ def get_password():
                 print("error: passwor must contain atleast one upper case")
         else:
             print("error:password should caontain min 8 characters")
-            
         
 
 
