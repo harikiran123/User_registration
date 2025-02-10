@@ -5,6 +5,6 @@ if len(first_name) > 3 and len(last_name) > 3:
         print(f"entered  first name '{first_name}' is true")
         print(f"entered last name '{last_name}' is true")
     else:
-        print("enter a valid user name")
+        print("enter a valid user name ")
 else:
     print("enter a valid user name")
