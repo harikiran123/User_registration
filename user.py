@@ -40,7 +40,7 @@ def check_mobile_number():
 def check_password_eight():
     while True:
         password=input("enter the password : ")
-        password_pattern = r"^(?=.*[A-Z])(?=.*[-!@#$%^&*()_+=/]).{8,}$"
+        password_pattern =  r"^(?=.*[A-Z])(?=.*\d).{8,}$"
         if re.match(password_pattern,password):
             return password
         else:
