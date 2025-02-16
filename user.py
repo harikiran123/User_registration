@@ -1,10 +1,35 @@
-first_name =str(input("enter the first name : "))
-last_name=str(input("enter the last name : "))
-if len(first_name) > 3 and len(last_name) > 3:
-    if first_name[0].isupper() and last_name[0].isupper():
-        print(f"entered  first name '{first_name}' is true")
-        print(f"entered last name '{last_name}' is true")
-    else:
-        print("enter a valid user name ")
-else:
-    print("enter a valid user name")
+import re
+
+
+def check_first_name():
+    while True:
+        first_name=input("enter the first name : ")
+        name_pattern=r"^[A-Z][a-z]{2,}$"
+        if re.match(name_pattern,first_name):
+            return first_name
+        else:
+            print("error: enter the correct value")
+
+def check_last_name():
+    while True:
+        last_name=input("enter the last name : ")
+        name_pattern=r"^[A-Z][a-z]{2,}$"
+        if re.match(name_pattern,last_name):
+            return last_name
+        else:
+            print("error: enter the correct value")
+        
+def main():
+    first_name = check_first_name()
+    last_name = check_last_name()
+    print(f"Valid First Name :{first_name}")
+    print(f"valid last name :{last_name}")
+
+
+if __name__=='__main__':
+    main()
+   
+
+    
+    
+    
