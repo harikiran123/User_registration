@@ -1,52 +1,46 @@
 import re
 
-def get_first_name():
+
+def check_first_name():
     while True:
-        f_name = input("Enter the first name: ")
-        
-        if len(f_name) > 2:  
-            if f_name[0].isupper():  
-                return f_name  
-            else:
-                print("Error: First name must start with an uppercase letter.")
+        first_name=input("enter the first name : ")
+        name_pattern=r"^[A-Z][a-z]{2,}$"
+        if re.match(name_pattern,first_name):
+            return first_name
         else:
-            print("Error: First name must contain at least 3 letters.")
+            print("error: enter the correct value")
 
-
-def get_last_name():
+def check_last_name():
     while True:
-        l_name= input("enter the last name : ")
-        if len(l_name) > 2:
-            if l_name[0].isupper():
-                return l_name
-            else:
-                print("error: last name must start with an uppercase letter ")
+        last_name=input("enter the last name : ")
+        name_pattern=r"^[A-Z][a-z]{2,}$"
+        if re.match(name_pattern,last_name):
+            return last_name
         else:
-            print("error: last name must contain at least 3 letters")
+            print("error: enter the correct value")
 
-def get_email():
-
+def check_email():
     while True:
-        e_mail=input("enter the email: ")
-        mail_patteren = r"^[a-zA-Z0-9/.+-_]+@gmail\.com$"
-        if re.match(mail_patteren,e_mail):
+        e_mail=input("enter the mail : ")
+        mail_pattern=r"^[a-zA-Z0-9.+_-]+@[a-z0-9-]+(\.[a-zA-Z]{2,})+$"
+        if re.match(mail_pattern,e_mail):
             return e_mail
         else:
-            print("error: enter the cotterct email formate")
+            print("error: enter the correct email")
+       
+def main():
+    first_name = check_first_name()
+    last_name = check_last_name()
+    e_mail=check_email()
+    print(f"Valid First Name :{first_name}")
+    print(f"valid last name :{last_name}")
+    print(f"valid e_mail :{e_mail}")
 
 
+if __name__=='__main__':
+    main()
+   
 
-
-
-
-first_name = get_first_name()
-last_name = get_last_name()
-e_mail=get_email()
-
-
-
-
-
-print(f"Entered first name '{first_name}' is valid.")
-print(f"Entered last name '{last_name} is valid")
-print(f"enteted email {e_mail} is valid")
+    
+    
+    
