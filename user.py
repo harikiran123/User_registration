@@ -2,6 +2,12 @@ import re
 
 
 def check_first_name():
+    
+    '''
+    Discription: This function will check the give first_name is in the formate or not.
+    parameters: None
+    return: first_name
+    '''
     while True:
         first_name=input("enter the first name : ")
         name_pattern=r"^[A-Z][a-z]{2,}$"
